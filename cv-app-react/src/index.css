@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', serif;
+}
+
+:root {
+    --grey: #f3f4f6;
+    --darker-greey: #cccccc;
+    --header-font-color: #e6e2d9;
+    --header-background-color: #606acf;
+
+    /* CV Font */
+    --header-header-font: 2rem;
+    --header-sub-font: 1rem;
+    --section-header: 1.5rem;
+}
+
+body {
+    padding: 1rem 15%;
+    background-color: var(--grey);
+}
+
+.app {
+    display: grid;
+    grid-template-columns: minmax(300px, 30%) 1fr;
+    gap: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+.pair-btns {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pair-btns button {
+    border: none;
+    font-weight: bold;
+    border-radius: 4px;
+    width: 100%;
+    padding: 4px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pair-btns .clear {
+    color: red;
+    background-color: rgb(247, 181, 181);
+}
+
+.clear:hover {
+    color: rgb(247, 181, 181);
+    background-color: red;
+}
+
+.pair-btns .load {
+    color: green;
+    background-color: rgb(192, 228, 192);
+}
+
+.load:hover {
+    color: rgb(192, 228, 192);
+    background-color: green;
+}
+
+/* TextInputField */
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+}
+
+.checkbox {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox input {
+    margin: 0;
+}
+
+.checkbox label {
+    font-size: 12px;
+}
+
+.input-container input {
+    margin-top: 4px;
+    height: 1.6rem;
+    padding: 0 8px;
+    border-radius: 4px;
+}
+
+.input-container input:hover {
+    background-color: rgb(239, 254, 254);
+}
+
+.fixed-textarea {
+    resize: none;
+    height: 150px;
+    padding: 4px;
+}
+
+.pair-container {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+.pair-container input {
+    width: 120px;
+}
+
+.fixed-textarea {
+    resize: none;
+    height: 150px;
+    padding: 4px;
+}
+
+.textarea-max-characters {
+    font-size: 12px;
+}
+
+.textarea-max-characters.limit-reached {
+    color: red;
+}
+
+/* CollapsableMenu */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expand-btn {
+    font-weight: 600;
+    height: 1rem;
+    width: 1rem;
+    border: none;
+    background-color: white;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: var(--darker-greey) 1px dashed;
+}
+
+.symbol {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.rotate {
+    transform: rotate(-180deg);
+}
+
+/* CollapsableMenuItem */
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(110, 109, 109);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.item:hover {
+    background-color: var(--grey);
+}
+
+.item .icon-btn {
+    background: none;
+    border: none;
+}
+
+.item .item-buttons {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+/*  Button Icons */
+.icon {
+    fill: #28292a;
+}
+
+.item-buttons .icon:hover {
+    fill: var(--header-background-color);
+}
+
+.item-buttons .delete .icon:hover {
+    fill: red;
+}
+
+/* BottomRowFormButtons*/
+form .btns-row {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+form .cancel-save {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
+.form-btn {
+    height: 2rem;
+    width: 4rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.form-btn:hover {
+    background: rgb(197, 193, 193);
+}
+
+.form-btn.save {
+    background: rgb(43, 183, 169);
+    color: white;
+}
+
+.form-btn.save:hover {
+    background: rgb(20, 160, 146);
+}
+
+.form-btn.delete {
+    background: rgb(210, 122, 68);
+    color: white;
+}
+
+.form-btn.delete:hover {
+    background: rgb(219, 66, 32);
+}
+
+/*  CV Render */
+.letter-paper {
+    width: 8.51in;
+    height: 11in;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+/* Header */
+.header {
+    height: 15%;
+    width: auto;
+    background-color: var(--header-background-color);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.header .name {
+    display: flex;
+    align-items: center;
+    height: 50%;
+    font-size: var(--header-header-font);
+    font-weight: 700;
+    color: var(--header-font-color);
+}
+
+.header .personal-info {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    padding-top: 1rem;
+    justify-content: space-around;
+    font-size: var(--header-sub-font);
+    color: var(--header-font-color);
+}
+
+.personal-info p {
+    display: flex;
+    gap: 0.3rem;
+}
+
+/* Sections */
+section {
+    padding: 0 1rem;
+    margin: 1rem 0;
+}
+
+.section-header {
+    text-align: center;
+    background-color: var(--header-background-color);
+    color: var(--header-font-color);
+    font-size: var(--section-header);
+    padding: 3px 0;
+}
+
+.section-content {
+    padding: 0.5rem;
+}
+
+.item-container {
+    display: flex;
+    gap: 3rem;
+    color: #28292a;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.item-container .degree {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.item-container .left {
+    width: 180px;
+}
+
+.item-container .school {
+    font-weight: bold;
+}
+
+.item-container .description {
+    width: 500px;
+    font-size: 13px;
+}
